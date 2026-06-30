@@ -576,3 +576,17 @@ body {
     transform-origin: top center;
   }
 }
+/* 页面主标题（🍪 + 标题） */
+h1 {
+  font-size: 22px; /* 原来可能是 28-32 */
+}
+
+/* section 大标题（比如 Beans / 手冲地图） */
+h2 {
+  font-size: 18px;
+}
+
+/* 小标题（Special Guests / Beans 上方标签） */
+h3 {
+  font-size: 14px;
+}

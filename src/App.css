@@ -515,3 +515,53 @@ body {
 .reset-btn:hover {
   background: #444;
 }
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  /* 整体padding */
+  .app {
+    padding: 12px;
+  }
+
+  /* filter变竖排 */
+  .filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-bar select {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .reset-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* coffee grid改单列 */
+  .coffee-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 标题缩小 */
+  .section-heading h2 {
+    font-size: 20px;
+  }
+
+  .section-kicker {
+    font-size: 12px;
+  }
+
+  /* card优化 */
+  .coffee-card {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

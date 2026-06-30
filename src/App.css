@@ -603,3 +603,46 @@ h3 {
     font-size: 13px;
   }
 }
+
+/* =========================
+   COFFEE CARD LAYOUT FIX
+========================= */
+
+.coffee-card {
+  padding: 12px 10px;   /* ⭐更紧凑 */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;             /* ⭐控制内部间距 */
+}
+
+/* 标题区域 */
+.coffee-card h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* 品牌 / 小字 */
+.coffee-card .brand,
+.coffee-card .origin {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* 风味 */
+.coffee-card .flavor {
+  margin: 2px 0;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* 价格区域 */
+.coffee-card .price {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* 防止文字贴边太远 */
+.coffee-card-content {
+  padding: 0;   /* ⭐关键：去掉多余内边距 */
+}

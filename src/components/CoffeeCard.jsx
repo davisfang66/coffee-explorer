@@ -1,7 +1,6 @@
 function CoffeeCard({ brand, name, country, process, flavor, price }) {
     return (
       <div className="coffee-card">
-        <div className="coffee-image">🍪</div>
         <div className="coffee-content">
           <p className="coffee-brand">{brand}</p>
           <h3>{name}</h3>

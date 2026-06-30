@@ -71,7 +71,7 @@ function FilterBar({ filters, setFilters, coffees, resetFilters }) {
         className="reset-btn"
         onClick={resetFilters}
       >
-        Reset / 重置
+        Reset / 重置选项
       </button>
 
     </div>

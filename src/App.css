@@ -550,13 +550,6 @@ body {
     border-radius: 12px;
   }
 
-  /* 图片自适应 */
-  .coffee-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
   /* 标题必须允许换行 */
   .coffee-card h3,
   .coffee-card p {

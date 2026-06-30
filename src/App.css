@@ -312,6 +312,7 @@ body {
 }
 
 
+
 /* =========================
    MOBILE RESPONSIVE PATCH
    (SAFE - DO NOT OVERRIDE DESIGN)
@@ -366,6 +367,16 @@ body {
    VERY SMALL PHONE (iPhone SE)
 ========================= */
 
+@media (max-width: 420px) {
+
+  .coffee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
 
 /* =========================
    MOBILE 3-COLUMN FIX

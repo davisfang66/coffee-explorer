@@ -565,3 +565,61 @@ body {
     font-size: 14px;
   }
 }
+/* =========================
+   DESKTOP DEFAULT
+========================= */
+
+.coffee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 卡片基础样式 */
+.coffee-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .coffee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE (核心)
+========================= */
+
+@media (max-width: 768px) {
+  .coffee-grid {
+    grid-template-columns: repeat(3, 1fr); /* ⭐ 关键：手机三列 */
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .coffee-card {
+    font-size: 10px;
+    border-radius: 10px;
+    transform: scale(0.9); /* ⭐ 轻微缩小 */
+    transform-origin: top center;
+  }
+
+  .coffee-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .filter-bar select {
+    font-size: 12px;
+  }
+}

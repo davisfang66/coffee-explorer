@@ -3,7 +3,7 @@ import Papa from 'papaparse'
 
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import FilterBar from '../components/Filterbar'
+import FilterBar from '../components/FilterBar'
 import CoffeeSection from '../components/CoffeeSection'
 
 function Home() {

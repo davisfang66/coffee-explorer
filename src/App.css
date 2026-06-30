@@ -366,13 +366,36 @@ body {
    VERY SMALL PHONE (iPhone SE)
 ========================= */
 
-@media (max-width: 420px) {
+
+/* =========================
+   MOBILE 3-COLUMN FIX
+========================= */
+
+@media (max-width: 768px) {
 
   .coffee-grid {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    padding: 0 10px;
   }
 
-  .hero h1 {
-    font-size: 32px;
+  .coffee-card {
+    transform: scale(0.92);
+    transform-origin: top center;
+  }
+
+  .coffee-card h3 {
+    font-size: 11px;
+  }
+
+  .coffee-brand,
+  .coffee-meta,
+  .coffee-flavor {
+    font-size: 10px;
+  }
+
+  .coffee-price {
+    font-size: 11px;
   }
 }

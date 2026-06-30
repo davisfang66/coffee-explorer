@@ -520,53 +520,9 @@ body {
    MOBILE RESPONSIVE FIX
 ========================= */
 
-@media (max-width: 768px) {
 
-  /* 整体padding */
-  .app {
-    padding: 12px;
-  }
-
-  /* filter变竖排 */
-  .filter-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .filter-bar select {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .reset-btn {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  /* coffee grid改单列 */
-  .coffee-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  /* 标题缩小 */
-  .section-heading h2 {
-    font-size: 20px;
-  }
-
-  .section-kicker {
-    font-size: 12px;
-  }
-
-  /* card优化 */
-  .coffee-card {
-    padding: 12px;
-    font-size: 14px;
-  }
-}
 /* =========================
-   DESKTOP DEFAULT
+   BASE GRID
 ========================= */
 
 .coffee-grid {
@@ -575,51 +531,48 @@ body {
   gap: 20px;
 }
 
-/* 卡片基础样式 */
-.coffee-card {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
 /* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1024px) {
-  .coffee-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* =========================
-   MOBILE (核心)
+   MOBILE FIX (核心修复)
 ========================= */
 
 @media (max-width: 768px) {
+
   .coffee-grid {
-    grid-template-columns: repeat(3, 1fr); /* ⭐ 关键：手机三列 */
-    gap: 10px;
-    padding: 0 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* ⭐关键 */
+    gap: 8px;
+    padding: 0 8px;
   }
 
   .coffee-card {
-    font-size: 10px;
-    border-radius: 10px;
-    transform: scale(0.9); /* ⭐ 轻微缩小 */
-    transform-origin: top center;
+    width: 100%;
+    min-width: 0;              /* ⭐防止溢出 */
+    overflow: hidden;          /* ⭐防止文字撑爆 */
+    border-radius: 12px;
   }
 
+  /* 图片自适应 */
   .coffee-card img {
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
 
-  .section-heading h2 {
-    font-size: 16px;
+  /* 标题必须允许换行 */
+  .coffee-card h3,
+  .coffee-card p {
+    font-size: 10px;
+    line-height: 1.2;
+    word-break: break-word;   /* ⭐关键 */
   }
 
-  .filter-bar select {
-    font-size: 12px;
+  /* 防止“竖长条错位” */
+  .coffee-card-content {
+    padding: 6px;
+  }
+
+  /* 整体缩小 */
+  .coffee-card {
+    transform: scale(0.95);
+    transform-origin: top center;
   }
 }

@@ -195,59 +195,118 @@ body {
   }
 }
 
+/* ===== coffee card 整体 ===== */
 .coffee-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  border-radius: 20px;
+  justify-content: space-between;
+
+  min-height: 250px; /* 控制卡片高度统一 */
+  border-radius: 24px;
   overflow: hidden;
-  background: #fffaf3;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  background: #fffaf2;
+  border: 1px solid #ead7bf;
+  box-shadow: 0 10px 24px rgba(91, 52, 25, 0.08);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 上半部分 */
-.card-top {
-  padding: 14px;
+.coffee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(91, 52, 25, 0.12);
+}
+
+/* ===== 上半部分：品牌 + 名称 ===== */
+.coffee-main {
+  flex: 1;
+  padding: 20px 18px 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
 }
 
-/* cookie图 */
-.cookie {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
+.coffee-brand {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a27045;
+  letter-spacing: 0.3px;
 }
 
-/* =========================
-   下半部分（重点）
-   ========================= */
+.coffee-name {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #4b2817;
+}
 
-.card-bottom {
-  background: #f3e6d8; /* ⭐重点：浅色区 */
-  padding: 12px;
+/* ===== 下半部分：固定信息区 ===== */
+.coffee-info-box {
+  background: #f3e6d8;   /* 稍微不同颜色的区域 */
+  border-top: 1px solid #ead7bf;
+  padding: 14px 16px 16px;
   text-align: center;
 
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-/* 让所有 bottom 对齐统一 */
-.coffee-origin {
+/* Panama · Honey 这一行 */
+.coffee-meta {
+  margin: 0;
   font-size: 12px;
-  opacity: 0.7;
+  font-weight: 600;
+  color: #6d4a33;
 }
 
+/* 风味描述 */
 .coffee-flavor {
+  margin: 0;
   font-size: 12px;
-  color: #6b4a35;
+  line-height: 1.4;
+  color: #7a5a4a;
+
+  min-height: 34px; /* 让不同卡片底部更整齐 */
 }
 
+/* 价格 */
 .coffee-price {
+  margin: 0;
   font-size: 14px;
-  font-weight: 700;
-  margin-top: 4px;
+  font-weight: 800;
+  color: #4b2817;
+}
+
+/* ===== 手机端可以稍微缩一点 ===== */
+@media (max-width: 768px) {
+  .coffee-card {
+    min-height: 220px;
+    border-radius: 18px;
+  }
+
+  .coffee-main {
+    padding: 16px 12px 12px;
+  }
+
+  .coffee-name {
+    font-size: 18px;
+  }
+
+  .coffee-info-box {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .coffee-meta,
+  .coffee-flavor {
+    font-size: 11px;
+  }
+
+  .coffee-price {
+    font-size: 13px;
+  }
 }

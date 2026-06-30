@@ -310,3 +310,69 @@ body {
     font-size: 13px;
   }
 }
+
+
+/* =========================
+   MOBILE RESPONSIVE PATCH
+   (SAFE - DO NOT OVERRIDE DESIGN)
+========================= */
+
+@media (max-width: 1024px) {
+  .coffee-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* 页面边距 */
+  .coffee-section {
+    padding: 0 16px;
+  }
+
+  /* grid变2列（更稳定） */
+  .coffee-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* 卡片自适应 */
+  .coffee-card {
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  /* 标题缩小但不破坏设计 */
+  .coffee-card h3 {
+    font-size: 16px;
+  }
+
+  .coffee-brand {
+    font-size: 11px;
+  }
+
+  .coffee-meta,
+  .coffee-flavor {
+    font-size: 11px;
+  }
+
+  .coffee-price {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONE (iPhone SE)
+========================= */
+
+@media (max-width: 420px) {
+
+  .coffee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}

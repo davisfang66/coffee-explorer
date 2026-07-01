@@ -410,3 +410,17 @@ body {
     font-size: 11px;
   }
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-qrcode {
+  width: 77px;
+  height: 77px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ead7bf;
+  background: #fffaf3;
+}

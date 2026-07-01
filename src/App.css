@@ -424,3 +424,153 @@ body {
   border: 1px solid #ead7bf;
   background: #fffaf3;
 }
+.coffee-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.coffee-card:visited {
+  color: inherit;
+}
+
+.coffee-card:hover {
+  transform: translateY(-4px);
+}
+/* =========================
+   Coffee Card 分层结构
+========================= */
+
+.coffee-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 260px;
+
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  background: #fffaf2;
+  border: 1px solid #ead4ba;
+  box-shadow: 0 18px 40px rgba(91, 52, 25, 0.1);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coffee-card:visited {
+  color: inherit;
+}
+
+.coffee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(91, 52, 25, 0.14);
+}
+
+/* 上半部分：品牌 + 名称 */
+.coffee-main {
+  flex: 1;
+
+  padding: 24px 22px 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  background: #fffaf2;
+}
+
+.coffee-brand {
+  margin: 0 0 10px;
+  color: #a27045;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.coffee-name {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.2;
+  color: #4b2817;
+}
+
+/* 下半部分：信息色块 */
+.coffee-info-box {
+  background: #f3e4d1;
+  border-top: 1px solid #ead4ba;
+
+  padding: 16px 18px 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-align: center;
+}
+
+.coffee-meta {
+  margin: 0;
+  color: #6d4a33;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.coffee-flavor {
+  margin: 0;
+  color: #7a5a4a;
+  font-size: 13px;
+  line-height: 1.45;
+
+  min-height: 38px;
+}
+
+.coffee-price {
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 900;
+  color: #4b2817;
+}
+
+/* 手机端稍微紧凑一点 */
+@media (max-width: 768px) {
+  .coffee-card {
+    min-height: 220px;
+    border-radius: 20px;
+  }
+
+  .coffee-main {
+    padding: 16px 10px 12px;
+  }
+
+  .coffee-name {
+    font-size: 14px;
+  }
+
+  .coffee-brand {
+    font-size: 10px;
+  }
+
+  .coffee-info-box {
+    padding: 10px 8px 12px;
+    gap: 5px;
+  }
+
+  .coffee-meta,
+  .coffee-flavor {
+    font-size: 10px;
+  }
+
+  .coffee-flavor {
+    min-height: 30px;
+  }
+
+  .coffee-price {
+    font-size: 11px;
+  }
+}

@@ -1,6 +1,13 @@
-function CoffeeCard({ brand, name, country, process, flavor, price }) {
+function CoffeeCard({ brand, name, country, process, flavor, price, url }) {
+  const CardTag = url ? "a" : "div"
+
   return (
-    <div className="coffee-card">
+    <CardTag
+      className="coffee-card"
+      href={url || undefined}
+      target={url ? "_blank" : undefined}
+      rel={url ? "noopener noreferrer" : undefined}
+    >
       <div className="coffee-main">
         <p className="coffee-brand">{brand}</p>
         <h3 className="coffee-name">{name}</h3>
@@ -11,7 +18,7 @@ function CoffeeCard({ brand, name, country, process, flavor, price }) {
         <p className="coffee-flavor">{flavor}</p>
         <p className="coffee-price">{price}</p>
       </div>
-    </div>
+    </CardTag>
   )
 }
 

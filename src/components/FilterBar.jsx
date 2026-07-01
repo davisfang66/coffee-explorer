@@ -1,79 +1,115 @@
-function FilterBar({ filters, setFilters, coffees, resetFilters }) {
+import {
+  getProcessCategories,
+  getFlavorCategories,
+  uniqueList
+} from "../utils/filterMaps"
 
-  const brands = [...new Set(coffees.map(c => c['Brand/品牌']).filter(Boolean))]
-  const countries = [...new Set(coffees.map(c => c['Country/国家']).filter(Boolean))]
-  const processes = [...new Set(coffees.map(c => c['Process/处理法']).filter(Boolean))]
-  const flavors = [...new Set(
-    coffees.flatMap(c =>
-      (c['Flavor CN/中文风味'] || '')
-        .split('、')
-        .map(f => f.trim())
-    ).filter(Boolean)
-  )]
+function FilterBar({ filters, setFilters, coffees, resetFilters }) {
+  const brands = uniqueList(
+    coffees.map(coffee => coffee["Brand/品牌"])
+  )
+
+  const countries = uniqueList(
+    coffees.map(coffee => coffee["Country/国家"])
+  )
+
+  const processes = uniqueList(
+    coffees.flatMap(coffee => getProcessCategories(coffee))
+  )
+
+  const flavors = uniqueList(
+    coffees.flatMap(coffee => getFlavorCategories(coffee))
+  )
+
+  const handleReset = () => {
+    if (resetFilters) {
+      resetFilters()
+    } else {
+      setFilters({
+        brand: "all",
+        country: "all",
+        process: "all",
+        flavor: "all"
+      })
+    }
+  }
 
   return (
     <div className="filter-bar">
-
-      {/* brand */}
       <select
         value={filters.brand}
         onChange={(e) =>
-          setFilters(prev => ({ ...prev, brand: e.target.value }))
+          setFilters(prev => ({
+            ...prev,
+            brand: e.target.value
+          }))
         }
       >
         <option value="all">品牌</option>
-        {brands.map((b, i) => (
-          <option key={i} value={b}>{b}</option>
+        {brands.map((brand, index) => (
+          <option key={index} value={brand}>
+            {brand}
+          </option>
         ))}
       </select>
 
-      {/* country */}
       <select
         value={filters.country}
         onChange={(e) =>
-          setFilters(prev => ({ ...prev, country: e.target.value }))
+          setFilters(prev => ({
+            ...prev,
+            country: e.target.value
+          }))
         }
       >
         <option value="all">国家</option>
-        {countries.map((c, i) => (
-          <option key={i} value={c}>{c}</option>
+        {countries.map((country, index) => (
+          <option key={index} value={country}>
+            {country}
+          </option>
         ))}
       </select>
 
-      {/* process */}
       <select
         value={filters.process}
         onChange={(e) =>
-          setFilters(prev => ({ ...prev, process: e.target.value }))
+          setFilters(prev => ({
+            ...prev,
+            process: e.target.value
+          }))
         }
       >
         <option value="all">处理法</option>
-        {processes.map((p, i) => (
-          <option key={i} value={p}>{p}</option>
+        {processes.map((process, index) => (
+          <option key={index} value={process}>
+            {process}
+          </option>
         ))}
       </select>
 
-      {/* flavor */}
       <select
         value={filters.flavor}
         onChange={(e) =>
-          setFilters(prev => ({ ...prev, flavor: e.target.value }))
+          setFilters(prev => ({
+            ...prev,
+            flavor: e.target.value
+          }))
         }
       >
         <option value="all">风味</option>
-        {flavors.map((f, i) => (
-          <option key={i} value={f}>{f}</option>
+        {flavors.map((flavor, index) => (
+          <option key={index} value={flavor}>
+            {flavor}
+          </option>
         ))}
       </select>
 
-      {/* reset button */}
       <button
         className="reset-btn"
-        onClick={resetFilters}
+        onClick={handleReset}
       >
         Reset / 重置选项
       </button>
-
     </div>
   )
 }

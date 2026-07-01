@@ -7,13 +7,13 @@ function Hero() {
         <h1>🍪的手冲地图</h1>
   
         <p className="hero-subtitle">
-          英国（目前only）精品咖啡探索
+          英国（目前only）
         </p>
   
 
   
         <p className="hero-hint">
-          咕咕嘎嘎！
+          咕咕嘎嘎！（BETA BETA测试ing）
         </p>
   
       </section>
